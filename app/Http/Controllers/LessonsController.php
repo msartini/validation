@@ -17,6 +17,11 @@ class LessonsController extends Controller
         $this->validator = $validator;
     }
 
+    public function index()
+    {
+        return Lesson::paginate(1);
+    }
+
     public function create()
     {
         return View::make('lessons.create');

@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+
+Route::group(['prefix' => 'v1'], function () {
+    Route::resource('lessons', 'LessonsController');
+});
+
+
+// Route::get('/user', function (Request $request) {
+//     dd('teste');
+//     return $request->user();
+// });
